@@ -1,0 +1,86 @@
+/* Overlay fullscreen blanco */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: clamp(12px, 4vw, 32px);
+  /* adaptable */
+
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+/* Contenedor del SVG */
+.overlay__content {
+  width: 100%;
+  max-width: 900px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SVG o contenido interno */
+.overlay__content svg,
+.overlay__content img {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  /* evita que se salga en móviles */
+  object-fit: contain;
+}
+
+/* Estado oculto */
+.overlay.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo-text {
+  font-size: 5px;
+}
+
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .overlay {
+    padding: 16px;
+
+  }
+
+  @media (max-width: 768px) {
+    #introLogo {
+      transform: scale(1.2);
+    }
+
+    .logo-text {
+      font-size: 7px;
+    }
+  }
+
+  .overlay__content svg,
+  .overlay__content img {
+    max-height: 90vh;
+    /* más control en pantallas pequeñas */
+  }
+}
+
+/* 📱 MUY PEQUEÑOS */
+@media (max-width: 480px) {
+  .overlay__content {
+    max-width: 95vw;
+  }
+}
+
+/* 💻 PANTALLAS GRANDES */
+@media (min-width: 1400px) {
+  .overlay__content {
+    max-width: 1000px;
+  }
+}

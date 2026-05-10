@@ -1,0 +1,17 @@
+:root {
+  --text: #ffffff;
+
+  --line: rgba(255, 255, 255, .85);
+  --soft: rgba(255, 255, 255, .04);
+  --muted: rgba(255, 255, 255, .18);
+  --muted-description: rgba(70, 66, 66);
+  --muted-card-p: rgb(102, 100, 100);
+  --grey: rgba(236, 234, 234, 0.85);
+  --mainColor: color(#DA4B2C);
+  --black: rgb(0, 0, 0);
+  --mutedP: rgb(167, 175, 169);
+}
+
+/* * {
+  outline: 1px solid red;
+} */

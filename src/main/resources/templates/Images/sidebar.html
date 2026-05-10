@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/springsecurity6"/>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MPG Mubles</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/SVG/SVGMPG.svg">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+                </head>
+
+                <body>
+
+                    
+                    <div xmlns:th="http://www.thymeleaf.org" th:fragment="sidebar">
+                        <div class="body-index-comercio">
+                            <div class="frame">
+                                <aside class="sidebar">
+
+                                    <div class="brand">
+                                        <div class="logo">
+                                            <i class="bi bi-bank2"></i>
+                                        </div>
+                                        <div>
+                                            <h4>Gestión MPG</h4>
+                                            <p>Administrador</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="divider"></div>
+
+                                    <nav class="menu">
+                                        <a th:href="@{/Images/create}">
+                                            <i class="bi bi-image"></i>
+                                            <span>Inicio</span>
+                                        </a>                                        
+                                        <a th:href="@{/Images/create}">
+                                            <i class="bi bi-image"></i>
+                                            <span>Inventario</span>
+                                        </a>                                        
+                                        <a th:href="@{/Images/create}">
+                                            <i class="bi bi-image"></i>
+                                            <span>Subir Producto</span>
+                                        </a>
+
+                                        <a th:href="@{/Images}">
+                                            <i class="bi bi-card-list"></i>
+                                            <span>Pedidos</span>
+                                        </a>
+                                        <a th:href="@{/Images}">
+                                            <i class="bi bi-card-list"></i>
+                                            <span>Configuraciones</span>
+                                        </a>
+                                        <a th:href="@{/Images}">
+                                            <i class="bi bi-card-list"></i>
+                                            <span>Ayuda</span>
+                                        </a>                                        
+                                    </nav>
+
+                                    <div class="logout">
+                                        <a th:href="@{/logout}">
+                                            <i class="bi bi-box-arrow-left"></i>
+                                            <span>Cerrar Sesión</span>
+                                        </a>
+                                    </div>
+
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+                </html>

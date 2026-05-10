@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/springsecurity6">
+    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPG Mubles</title>
+  <link rel="icon" type="image/svg+xml" href="Assets/SVG/SVGMPG.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" th:href="@{/css/LivingRoomInedex.css}" />
+  <link rel="stylesheet" th:href="@{/css/footer.css}" />
+
+  <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVLKM58VVP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZVLKM58VVP');
+  </script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="../../index.html" class="logo" style="text-decoration: none;">MPG</a>
+
+    <nav class="nav-links">
+      <!-- <a href="#">Todos</a> -->
+      <a href="../../views/LivingRoom/index.html">Sala</a>
+      <a href="../../views/Butacas/index.html">Butacas</a>
+      <a href="../../views/BeedRoom/index.html">Dormitorios</a>
+      <a href="../../views/DiningRoom/index.html">Comedores</a>
+      <a href="../../views/Closets/index.html">Armarios</a>
+    </nav>
+
+
+  </header>
+
+  <!-- HERO -->
+  <section class="living-room-hero container">
+    <div class="living-room-hero-top">
+      <div class="living-room-hero-content">
+        <p class="living-room-small-label">Colección Verano 2026</p>
+        <h1 class="living-room-title">Muebles<br>de Sala</h1>
+      </div>
+
+      <div class="living-room-hero-text">
+        <p class="living-room-description">
+          Un equilibrio entre materiales auténticos y diseño refinado.
+          Cada pieza de nuestra colección destaca por su carácter,
+          su calidad artesanal y su armonía en espacios contemporáneos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="living-room-products container">
+    <div class="living-room-product-grid">
+
+      <!-- Card 1 -->
+      <a href="../../views/LivingRoom/Details1.html" class="living-room-product-card-link">
+        <article class="living-room-product-card">
+          <div class="living-room-image-frame">
+            <img class="living-room-product-image" src="../../Media/Forniture/chesterfield.webp" alt="Silla elegante">
+            <span class="living-room-badge">TOP VENTAS</span>
+          </div>
+
+          <div class="living-room-product-info">
+            <div class="living-room-product-header">
+              <h3 class="living-room-product-name">Chesterfield</h3>
+              <span class="living-room-product-price">₡395.000</span>
+            </div>
+
+            <p class="living-room-product-description">
+              A study in ergonomics and minimal aesthetics.
+              Hand-carved walnut paired with premium organic textiles.
+            </p>
+          </div>
+        </article>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="../../views/LivingRoom/Details2.html" class="living-room-product-card-link">
+        <article class="living-room-product-card">
+          <div class="living-room-image-frame living-room-image-frame-tall">
+            <img class="living-room-product-image" src="../../Media/Forniture/card2.webp" alt="Mesa de madera">
+
+          </div>
+
+          <div class="living-room-product-info">
+            <div class="living-room-product-header">
+              <h3 class="living-room-product-name">Divan Lineal</h3>
+              <span class="living-room-product-price">₡380.000</span>
+            </div>
+
+            <p class="living-room-product-description">
+              Solid European oak, treated with natural oils to preserve
+              the grain’s haptic quality and visual warmth.
+            </p>
+          </div>
+        </article>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="../../views/LivingRoom/Details3.html" class="living-room-product-card-link">
+        <article class="living-room-product-card">
+          <div class="living-room-image-frame">
+            <img class="living-room-product-image" src="../../Media/Forniture/card3.webp" alt="Sofá moderno">
+          </div>
+
+          <div class="living-room-product-info">
+            <div class="living-room-product-header">
+              <h3 class="living-room-product-name">Sofá Kobe</h3>
+              <span class="living-room-product-price">₡290.000</span>
+            </div>
+
+            <p class="living-room-product-description">
+              Versatile modularity wrapped in deep forest velvet.
+              Engineered for both formal settings and deep relaxation.
+            </p>
+          </div>
+        </article>
+      </a>
+      <!-- Card 4 -->
+      <a href="../../views/LivingRoom/Details4.html" class="living-room-product-card-link">
+        <article class="living-room-product-card">
+          <div class="living-room-image-frame">
+            <img class="living-room-product-image" src="../../Media/Forniture/card4.webp" alt="Sofá Elegance">
+          </div>
+
+          <div class="living-room-product-info">
+            <div class="living-room-product-header">
+              <h3 class="living-room-product-name">Sofá Colonial</h3>
+              <span class="living-room-product-price">₡410.000</span>
+            </div>
+
+            <p class="living-room-product-description">
+              Diseño contemporáneo con líneas limpias y confort superior.
+            </p>
+          </div>
+        </article>
+      </a>
+
+      <!-- Card 5 -->
+      <a href="../../views/LivingRoom/Details5.html" class="living-room-product-card-link">
+        <article class="living-room-product-card">
+          <div class="living-room-image-frame">
+            <img class="living-room-product-image" src="../../Media/Forniture/card5.webp" alt="Luxury Corner">
+          </div>
+
+          <div class="living-room-product-info">
+            <div class="living-room-product-header">
+              <h3 class="living-room-product-name">Sofá Luxury</h3>
+              <span class="living-room-product-price">₡520.000</span>
+            </div>
+
+            <p class="living-room-product-description">
+              Espacios amplios y materiales premium para máxima comodidad.
+            </p>
+          </div>
+        </article>
+      </a>
+
+      <!-- Card 6 -->
+      <a href="../../views/LivingRoom/Details6.html" class="living-room-product-card-link">
+        <article class="living-room-product-card">
+          <div class="living-room-image-frame">
+            <img class="living-room-product-image" src="../../Media/Forniture/card6.webp" alt="Minimal Soft">
+          </div>
+
+          <div class="living-room-product-info">
+            <div class="living-room-product-header">
+              <h3 class="living-room-product-name">Sofá Minimalista</h3>
+              <span class="living-room-product-price">₡270.000</span>
+            </div>
+
+            <p class="living-room-product-description">
+              Minimalismo moderno con textura suave y elegante.
+            </p>
+          </div>
+        </article>
+      </a>
+
+
+      <!-- Card 7 -->
+      <a href="../../views/LivingRoom/Details7.html" class="living-room-product-card-link">
+        <article class="living-room-product-card">
+          <div class="living-room-image-frame">
+            <img class="living-room-product-image" src="../../Media/Forniture/card7.webp" alt="Sofá Elegance">
+          </div>
+
+          <div class="living-room-product-info">
+            <div class="living-room-product-header">
+              <h3 class="living-room-product-name">Esquina Real</h3>
+              <span class="living-room-product-price">₡430.000</span>
+            </div>
+
+            <p class="living-room-product-description">
+              Diseño contemporáneo con líneas limpias y confort superior.
+            </p>
+          </div>
+        </article>
+      </a>
+
+      <!-- Card 8 -->
+      <a href="../../views/LivingRoom/Details8.html" class="living-room-product-card-link">
+        <article class="living-room-product-card">
+          <div class="living-room-image-frame">
+            <img class="living-room-product-image" src="../../Media/Forniture/card8.webp" alt="Luxury Corner">
+            <span class="living-room-badge">TOP VENTAS</span>
+          </div>
+
+          <div class="living-room-product-info">
+            <div class="living-room-product-header">
+              <h3 class="living-room-product-name">Real 3 / 2</h3>
+              <span class="living-room-product-price">₡390.000</span>
+            </div>
+
+            <p class="living-room-product-description">
+              Espacios amplios y materiales premium para máxima comodidad.
+            </p>
+          </div>
+        </article>
+      </a>
+
+      <!-- Card 9 -->
+      <a href="../../views/LivingRoom/Details9.html" class="living-room-product-card-link">
+        <article class="living-room-product-card">
+          <div class="living-room-image-frame">
+            <img class="living-room-product-image" src="../../Media/Forniture/card9.webp" alt="Minimal Soft">
+          </div>
+
+          <div class="living-room-product-info">
+            <div class="living-room-product-header">
+              <h3 class="living-room-product-name">Esquinero Hamburgo</h3>
+              <span class="living-room-product-price">₡550.000</span>
+            </div>
+
+            <p class="living-room-product-description">
+              Minimalismo moderno con textura suave y elegante.
+            </p>
+          </div>
+        </article>
+      </a>
+    </div>
+      
+    <!-- ADD NEW CARD -->
+    <div clas="">
+        
+    </div>
+  </section>
+  
+  
+  
+
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="footer-overlay">
+
+      <!-- línea roja arriba -->
+      <div class="footer-top-line"></div>
+
+      <div class="footer-container">
+
+        <!-- LEFT -->
+        <div class="footer-col">
+          <h2 class="logo">MPG</h2>
+
+          <p class="mt-2">Atención al cliente en línea:</p>
+          <p>+506 8787-6656</p>
+          <p>info@zestdeco.USA</p>
+
+          <h3 class="customer-title">ATENCIÓN AL CLIENTE</h3>
+          <p>Nuestro equipo está disponible:</p>
+          <p>Lunes y viernes: 10:00 am a 5:30 pm</p>
+          <p>Sábado y domingo: 11:00 am a 4:30 pm</p>
+          <p>Días festivos: Abierto</p>
+        </div>
+
+        <!-- CENTER -->
+        <div class="footer-col">
+          <h3>NAVEGACIÓN</h3>
+          <ul class="footer-links">
+            <li><a href="../../views/LivingRoom/index.html">Sala</a></li>
+            <li><a href="../../views/Butacas/index.html">Butacas</a></li>
+            <li><a href="../../views/BeedRoom/index.html">Dormitorio</a></li>
+            <li><a href="../../views/DiningRoom/index.html">Comedor</a></li>
+            <li><a href="../../views/Closets/index.html">Armarios</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="footer-col">
+          <h3>BOLETÍN</h3>
+
+          <p class="newsletter-text">
+            Forma parte de MPG.<br><br>
+            Recibe inspiración para tu hogar, ideas de diseño y novedades en muebles de madera.<br>
+            Creamos espacios que se viven.
+          </p>
+
+          <div class="newsletter">
+            <input type="email" placeholder="ENTER EMAIL..." />
+            <button>ENVIAR</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

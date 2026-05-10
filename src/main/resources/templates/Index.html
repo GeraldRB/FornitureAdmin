@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/springsecurity6">
+
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MPG</title>
+    <link rel="icon" type="image/svg+xml" th:href="@{/SVG/SVGMPG.svg}">
+
+    <!-- En teoria tiene error -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/theme.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/overlay.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/imageFront.css}">
+    <link rel="stylesheet" th:href="@{/css/animationTXT.css}">
+    <link rel="stylesheet" th:href="@{/css/section-home.css}">
+    <link rel="stylesheet" th:href="@{/css/section-product.css}">
+    <link rel="stylesheet" th:href="@{/css/discount.css}">
+    <link rel="stylesheet" th:href="@{/css/featured.css}">
+    <link rel="stylesheet" th:href="@{/css/docor.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/animationImage.css}">
+    <link rel="stylesheet" th:href="@{/css/animationFront.css}">        
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVLKM58VVP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZVLKM58VVP');
+    </script>
+</head>
+
+<body>
+    <!-- OVERLAY -->
+    <div id="overlay" class="overlay">
+        <div class="overlay__content">
+
+            <div class="intro-overlay" id="introOverlay">
+
+                <svg id="introLogo" viewBox="0 0 100 30" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#DA4B2C"></stop>
+                            <stop offset="100%" stop-color="#DA4B2C"></stop>
+                        </linearGradient>
+
+                        <pattern id="wave" x="0" y="5.0" width="40" height="20" patternUnits="userSpaceOnUse">
+                            <g id="waveGroup">
+                                <path id="wavePath"
+                                    d="M-40 9 Q-30 10 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                                    fill="url(#gradient)">
+                                    <animateTransform attributeName="transform" begin="0s" dur="1.5s" type="translate"
+                                        from="0 0" to="40 0" repeatCount="indefinite" />
+                                </path>
+                            </g>
+                        </pattern>
+                    </defs>
+
+
+                    <text class="logo-text" text-anchor="middle" x="50" y="15" fill="#2e2f2a">
+                        MPG
+                    </text>
+
+
+                    <text class="logo-text" text-anchor="middle" x="50" y="15" fill="url(#wave)">
+                        MPG
+                    </text>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="front-page" id="frontPage">
+
+            <header class="navbar">
+                <div class="nav-left">
+                    <!-- <div class="pill" style="opacity:.75; font-size:19px; color: white; padding: 0px 10px;">About</div>
+                    <div class="pill" style="opacity:.75; font-size:19px; color: white; padding: 0px 10px;">Shop</div>
+                    <div class="pill" style="opacity:.75; font-size:19px; color: white; padding: 0px 10px;">Store</div> -->
+                </div>
+                <div class="nav-center">
+                    <div class="logo-slot" id="navLogoSlot">
+                        <span id="navLogoFinal" class="nav-logo-final">Muebles Palmares</span>
+                    </div>
+                </div>
+
+                <div class="nav-right">
+                    <!-- <div class="pill" style=" opacity: .75; font-size: 19px; color: white; padding: 0 10px;">Serch</div>
+                    <div style=" opacity: .75; font-size: 19px; color: white; padding: 0 10px;">|</div>
+                    <div class="pill" style=" opacity: .75; font-size: 19px; color: white; padding: 0 10px;">Cart</div> -->
+                    <div style=" opacity: .75; font-size: 19px; color: white; padding: 0 10px;">|</div>
+                    <a th:href="@{/Create}" class="pill" style=" opacity: .75; font-size: 19px; color: white; padding: 0 10px;"><i class="bi bi-bag-plus-fill"></i></a>
+                </div>
+            </header>
+
+            <div class="moving-text">
+                <span>MPG — MUEBLES PALMARES — MPG — MUEBLES PALMARES —</span>
+            </div>
+
+            <div class="zoom-start-big-wrap">
+                <img th:src="@{/img/FrontPage/hero.webp}" alt="Front Page" class="zoom-start-big">
+            </div>
+
+            <div class="introduction-text">
+                <h2>
+                    Creamos muebles funcionales y emocionalmente conectados que elevan tu hogar,
+                    combinando diseño — calidad y estilo único con la esencia costarricense.
+                </h2>
+            </div>
+
+            <div class="btn-fornitures">
+                <a th:href="@{/sala}" class="btn-link">
+                    <span class="btn-label">Muebles de Sala</span>
+                    <span class="btn-arrow">
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="container d-flex justify-content-center align-items-center" id="productGrid">
+            <div class="section-title">
+                <h1>Belleza que se Vive</h1>
+
+                <div class="section-description">
+                    <p>
+                        <strong> <em>MPG</em></strong> es una propuesta moderna en diseño de interiores y mobiliario,
+                        enfocada en crear espacios tan funcionales como visualmente impactantes
+                        Cada ambiente que diseñamos refleja tu esencia.
+                        Combinamos elementos atemporales con detalles únicos,
+                        <span class="span-color">
+                            logrando un equilibrio perfecto entre estilo, calidad y funcionalidad
+                        </span>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section-Home -->
+        <div class="product-grid">
+
+            <a href="./views/LivingRoom/Details5.html" class="card">
+                <div class="card-img-anim-wrap">
+                    <img class="card-img-anim" src="./Media/Forniture/card5.webp" alt="Vintage ceramic vase">
+                </div>
+
+                <h2>Sofá Luxury</h2>
+
+                <p>
+                    Elegant ceramic vase with a rustic finish —
+                    perfect for dried florals or as a timeless decorative accent.
+                </p>
+            </a>
+
+            <a href="./views/LivingRoom/Details3.html" class="card">
+                <div class="card-img-anim-wrap">
+                    <img class="card-img-anim" src="./Media/Forniture/card3.webp" alt="Decorative modern vase">
+                </div>
+
+                <h2>Sofá Kobe</h2>
+
+                <p>
+                    Elegant ceramic vase with a rustic finish —
+                    perfect for dried florals or as a timeless decorative accent.
+                </p>
+            </a>
+
+            <a href="./views/LivingRoom/Details7.html" class="card">
+                <div class="card-img-anim-wrap">
+                    <img class="card-img-anim" src="./Media/Forniture/card7.webp" alt="Minimalist home vase">
+                </div>
+
+                <h2>Esquina Real</h2>
+
+                <p>
+                    Elegant ceramic vase with a rustic finish —
+                    perfect for dried florals or as a timeless decorative accent.
+                </p>
+            </a>
+
+            <a href="./views/LivingRoom/Details4.html" class="card">
+                <div class="card-img-anim-wrap">
+                    <img class="card-img-anim" src="./Media/Forniture/card4.webp" alt="Warm lighting decor vase">
+                </div>
+
+                <h2>Sofá Colonial</h2>
+
+                <p>
+                    Elegant ceramic vase with a rustic finish —
+                    perfect for dried florals or as a timeless decorative accent.
+                </p>
+            </a>
+
+            <a href="./views/LivingRoom/Details8.html" class="card">
+                <div class="card-img-anim-wrap">
+                    <img class="card-img-anim" src="./Media/Forniture/card8.webp" alt="Stylish ceramic decor">
+                </div>
+
+                <h2>Real 3 / 2</h2>
+
+                <p>
+                    Elegant ceramic vase with a rustic finish —
+                    perfect for dried florals or as a timeless decorative accent.
+                </p>
+            </a>
+
+        </div>
+
+        <!-- Id Product -->
+        <div id="TrendyProduct"></div>
+        <div class="prducto-Trendy d-flex flex-column flex-md-row">
+            <h1 class="text-start">
+                Productos Más <br class="br-desktop">
+                Vendidos
+            </h1>
+
+            <div class="ms-auto">
+                <p>
+                    Una selección de piezas actuales pensadas para inspirar tu espacio. <br>
+                    Estos diseños combinan estilo, funcionalidad — comodidad <br>
+                    descubre opciones que están marcando tendencia!
+                </p>
+            </div>
+        </div>
+
+        <!-- section.productos -->
+        <div class="product-showcase">
+            <div class="showcase-left">
+                <a href="./views/LivingRoom/Details1.html">
+                    <div class="card-showcase big-card">
+                        <div class="card-img-anim-wrap">
+                            <img class="card-img-anim" src="./Media/Forniture/chesterfield.webp" alt="">
+                        </div>
+                        <p class="tag-popular">Más Populares</p>
+                        <div class="card-info">
+                            <h3>Chesterfield</h3>
+                            <span>₡395.000</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="showcase-right">
+                <a href="./views/DiningRoom/Details6.html">
+                    <div class="card-showcase small-card">
+                        <div class="card-img-anim-wrap">
+                            <img class="card-img-anim" src="./Media/DiningRooms/card6.webp" alt="">
+                        </div>
+                        <p class="tag">Top Trendy</p>
+                        <div class="card-info">
+                            <h3>Comedor Roble Claro</h3>
+                            <span>₡790.000</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="./views/BeedRoom/Details5.html">
+                    <div class="card-showcase small-card">
+                        <div class="card-img-anim-wrap">
+                            <img class="card-img-anim" src="./Media/Beds/card6.jpg" alt="">
+                        </div>
+                        <p class="tag">Top Selling</p>
+                        <div class="card-info">
+                            <h3>Cama Velvet Pink</h3>
+                            <span>₡445.000</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="./views/Closets/Details2.html">
+                    <div class="card-showcase small-card">
+                        <div class="card-img-anim-wrap">
+                            <img class="card-img-anim" src="./Media/Closets/card2.webp" alt="">
+                        </div>
+                        <p class="tag">Más Populares</p>
+                        <div class="card-info">
+                            <h3>Tocador Lumière</h3>
+                            <span>₡350.000</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="./views/Butacas/Details1.html">
+                    <div class="card-showcase small-card">
+
+                        <div class="card-img-anim-wrap">
+                            <img class="card-img-anim" src="./Media/Butacas/car1.webp" alt="">
+                        </div>
+
+                        <!-- PointerView -->
+                        <div id="discountGrid"></div>
+
+                        <p class="tag">Most popular</p>
+                        <div class="card-info">
+                            <h3>Butaca Harmony</h3>
+                            <span>₡260.000</span>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="discount-grid">
+            <video autoplay muted loop playsinline>
+                <source th:src="@{/img/Videos/Descuento.mp4}" type="video/mp4">
+            </video>
+
+            <div class="card-discount">
+                <h6>Ofertas Especiales</h6>
+
+                <h1>
+                    Ahorra hasta <br>
+                    Un 35%
+                </h1>
+
+                <p>
+                    Encuentra piezas seleccionadas para tu hogar con precios especiales.
+                    Diseños que combinan estilo y funcionalidad, disponibles por tiempo limitado.
+                </p>
+
+                <a href="#" class="discount-btn">
+                    Descubrir más
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+
+        <div id="featuredGrid"></div>
+        <div class="featured-products d-flex flex-column flex-md-row">
+            <h1 class="text-start">
+                Descubre Todos <br class="br-desktop">
+                Nuestros Productos
+            </h1>
+
+            <div class="ms-md-auto featured-cards mt-3  ">
+                <div>
+                    <a href="./views/LivingRoom/index.html" class="card-style">Sala</a>
+                </div>
+
+                <div>
+                    <a href="./views/Butacas/index.html" class="card-style">Butacas</a>
+                </div>
+
+                <div>
+                    <a href="./views/BeedRoom/index.html" class="card-style">Dormitorios</a>
+                </div>
+
+                <div>
+                    <a href="./views/DiningRoom/index.html" class="card-style">Comedores</a>
+                </div>
+
+                <div>
+                    <a href="./views/Closets/index.html" class="card-style">Armarios</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="featured-grid">
+            <div class="d-flex flex-column flex-lg-row justify-content-center gap-3">
+
+                <div class="featured-card">
+                    <a href="./views/DiningRoom/Details1.html" style="text-decoration: none;">
+                        <div class="card-img-anim-wrap">
+                            <img class="card-img-anim" src="./Media/DiningRooms/card1.1.webp" alt="">
+                        </div>
+                        <h1>Comedor Clasico</h1>
+                    </a>
+                </div>
+
+                <div class="featured-card">
+                    <a href="./views/Butacas/Details3.html" style="text-decoration: none;">
+                        <div class="card-img-anim-wrap">
+                            <img class="card-img-anim" src="./Media/Butacas/card3.1.webp" alt="">
+                        </div>
+                        <h1>Butaca Royal Blue</h1>
+                    </a>
+                </div>
+
+                <div class="featured-card">
+                    <a href="./views/Closets/Details3.html" style="text-decoration: none;">
+                        <div class="card-img-anim-wrap" style="text-decoration: none;">
+                            <img class="card-img-anim" src="./Media/Closets/card3.webp" alt="">
+                        </div>
+                        <h1>Armario Nova</h1>
+                    </a>
+                </div>
+
+                <div class="featured-card">
+                    <a href="./views/Butacas/Details4.html" style="text-decoration: none;">
+                        <div class="card-img-anim-wrap" style="text-decoration: none;">
+                            <img class="card-img-anim" src="./Media/Butacas/card4.webp" alt="">
+                        </div>
+                        <h1>Butaca Urban</h1>
+                    </a>
+                </div>
+
+                <div class="featured-card">
+                    <a href="./views/DiningRoom/Details3.html" style="text-decoration: none;">
+                        <div class="card-img-anim-wrap" style="text-decoration: none;">
+                            <img class="card-img-anim" src="./Media/DiningRooms/card3.webp" alt="">
+                        </div>
+                        <h1>Comedor Moderno</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="justify-content-center text-center">
+            <a href="./views/LivingRoom/" class="collections-btn">Mirar coleccion
+                <span class="btn-span">↓</span>
+            </a>
+        </div>
+
+
+        <section class="decor-section">
+            <h1 class="decor-title" id="decorSection">
+                <span>TRANSFORMA TU</span> HOGAR CON ESTILO
+            </h1>
+
+            <div class="decor-grid">
+                <div class="decor-card">
+                    <img class="card-img-anim" th:src="@{/img/Forniture/FrontForniture.webp}" alt="Living room decoration">
+                    <div class="decor-overlay">
+                        <h2>Hazlo tuyo!<br>Descubre tu estilo</h2>
+                        <a href="./views/LivingRoom/index.html" class="decor-btn mt-4">
+                            <span class="btn-text ">Descubrir más</span>
+                            <span class="btn-icon">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="decor-card">
+                    <img class="card-img-anim" th:src="@{/img/Forniture/interiores.jpeg}" alt="Sofa collection">
+                    <div class="decor-overlay">
+                        <h2>Colecciones de sofás<br>para tu hogar</h2>
+                        <a href="./views/LivingRoom/index.html" class="decor-btn mt-4">
+                            <span class="btn-text">Descubrir más</span>
+                            <span class="btn-icon">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="footer" id="footer">
+            <div class="footer-overlay">
+
+                <!-- línea roja arriba -->
+                <div class="footer-top-line"></div>
+
+                <div class="footer-container">
+
+                    <!-- LEFT -->
+                    <div class="footer-col">
+                        <h2 class="logo">MPG</h2>
+
+                        <p class="mt-2">Atención al cliente en línea:</p>
+                        <p>+506 8787-6656</p>
+                        <p>info@zestdeco.USA</p>
+
+                        <h3 class="customer-title">ATENCIÓN AL CLIENTE</h3>
+                        <p>Nuestro equipo está disponible:</p>
+                        <p>Lunes y viernes: 10:00 am a 5:30 pm</p>
+                        <p>Sábado y domingo: 11:00 am a 4:30 pm</p>
+                        <p>Días festivos: Abierto</p>
+                    </div>
+
+                    <!-- CENTER -->
+                    <div class="footer-col">
+                        <h3>NAVEGACIÓN</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Inicio</a></li>
+                            <!-- <li><a href="#">Tienda</a></li>
+                            <li><a href="#">Nosotros</a></li> -->
+                            <!-- <li><a href="#">Todos los Muebles</a></li> -->
+                            <li><a href="./views/LivingRoom/index.html">Sala</a></li>
+                            <li><a href="./views/Butacas/index.html">Butacas</a></li>
+                            <li><a href="./views/BeedRoom/index.html">Dormitorio</a></li>
+                            <li><a href="./views/DiningRoom/index.html">Comedor</a></li>
+                            <li><a href="./views/Closets/index.html">Armarios</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- RIGHT -->
+                    <div class="footer-col">
+                        <h3>BOLETÍN</h3>
+
+                        <p class="newsletter-text">
+                            Forma parte de MPG.<br><br>
+                            Recibe inspiración para tu hogar, ideas de diseño y novedades en muebles de madera.<br>
+                            Creamos espacios que se viven.
+                        </p>
+
+                        <div class="newsletter">
+                            <input type="email" placeholder="ENTER EMAIL..." />
+                            <button>ENVIAR</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script type="module" th:src="@{/js/animationWater.js}"></script>
+    <script type="module" th:src="@{/js/overlay.js}"></script>
+    <script type="module" th:src="@{/js/scroll.js}"></script>
+    <script type="module" th:src="@{/js/animationImages.js}"></script>
+
+
+</body>
+
+</html>

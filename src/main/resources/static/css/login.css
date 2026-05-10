@@ -1,0 +1,133 @@
+:root {
+    --bg: #fff;
+    --color-azul: #004374;
+    --color-negro: #3b4a59;
+    --color-gris: #6b7280;
+    --color-buttom1: #16639b;
+    --color-buttom2: #008196;
+    --card: #ffffff;
+    --pacientes: #FF8300;
+    --agedarCita: #0088FF;
+    --colorEliminar: #dc3545;
+}
+/* Colores Letras */
+
+/* Colores */
+.color-azul {
+    color: var(--color-azul);
+}
+
+
+/* Navbar */
+.logo {
+    width: 40px;
+    display: block;
+
+}
+
+.logo-card {
+    height: auto;
+    margin-right: 23px;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 999rem;
+}
+
+.nav-shadow {
+    backdrop-filter: saturate(180%) blur(8px);
+    background: color-mix(in oklab, var(--bg), white 40%);
+}
+
+.nav-letras {
+    color: var(--color-buttom1);
+    border: 0;
+    border-radius: 999px;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 24px;
+    display: inline-block;
+    font-size: 1.10rem;
+}
+
+.btn-Persona {
+    background: var(--pacientes);
+    color: #fff !important;
+    border: 0;
+    border-radius: 999px;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 24px;
+    display: inline-block;
+    font-size: 1.1.3rem;
+}
+
+.btn-Medico {
+    background: var(--color-buttom1);
+    color: #fff !important;
+    border: 0;
+    border-radius: 999px;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 24px;
+    display: inline-block;
+    font-size: 1.1.3rem;
+}
+
+.btn-Medico:hover{
+    background: linear-gradient(90deg, #0d6efd, #00b4d8);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.4);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.btn-Persona:hover{
+    background: linear-gradient(90deg, #ff6600, #ff9900);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.4);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+/* BOTONES */
+
+
+/*Botones Acciones*/
+
+.btn-editar {
+    background-color: white;
+    color: var(--color-azul);
+    border: none;
+
+}
+
+.btn-borrar {
+    background-color: white;
+    color: var(--colorEliminar);
+    border: none;
+}
+
+.btn-editar:hover {
+    background-color: var(--color-azul);
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn-borrar:hover {
+    background-color: var(--colorEliminar);
+    color: white;
+    transform: scale(1.05);
+}
+/* Footer */
+footer {
+    background-color: var(--color-buttom2);
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 3px 0;
+    margin-top: 3px;
+}
+

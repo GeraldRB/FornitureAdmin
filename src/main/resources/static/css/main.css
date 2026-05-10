@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  background-color: var(--grey);
+}
+
+/* centra el logo en la pantalla sin inline styles */
+
+
+/* SVG */
+#introLogo {
+  font-family: "Montserrat";
+  font-size: 6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  transition: 1s font-size;
+  letter-spacing: .00em;
+
+  /* Agregar el txt al centro */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.br-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .br-desktop {
+    display: inline;
+  }
+}

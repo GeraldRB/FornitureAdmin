@@ -1,0 +1,30 @@
+/* hover suave (opcional) */
+.card:hover .card-img-anim.is-visible {
+    transform: scale(1.03);
+    transition: transform 0.4s ease;
+}
+
+.card-img-anim-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.card-img-anim {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.05);
+}
+
+.card-img-anim.is-visible {
+  animation: cardImgZoom 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes cardImgZoom {
+  from {
+    transform: scale(1.55);
+  }
+  to {
+    transform: scale(1);
+  }
+}

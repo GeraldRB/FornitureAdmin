@@ -1,0 +1,134 @@
+.product-showcase {
+  display: grid;
+  grid-template-columns: 2fr 1.3fr;
+  gap: 20px;
+  align-items: start;
+  width: 100%;
+}
+
+.product-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-showcase a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.big-card img {
+  width: 100%;
+  height: 72vh;
+  object-fit: cover;
+}
+
+.tag-popular {
+  font-size: 15px;
+  color: #b46b5d;
+  margin: 8px 0 4px;
+  font-family: "Monserrat";
+  margin-left: 5px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.showcase-right {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+}
+
+.small-card img {
+  width: 100%;
+  height: 298px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-showcase {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.card-showcase:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card-showcase h3 {
+  margin: 0;
+  font-family: "Monserrat";
+  font-size: 1.30rem;
+  color: var(--black);
+}
+
+.tag {
+  font-size: 15px;
+  color: #b46b5d;
+  margin: 8px 0 4px;
+  font-family: "Monserrat";
+}
+
+.product-showcase span {
+  margin: 0;
+  font-size: 19px;
+  color: var(--black);
+  -webkit-text-stroke: 0.15px black;
+
+}
+
+.prducto-Trendy {
+  margin-top: 50px;
+}
+
+.prducto-Trendy h1 {
+  margin-left: 10px;
+
+  font-size: 39px;
+  color: var(--black);
+  -webkit-text-stroke: 1px black;
+  font-family: "Monserrat";
+}
+
+.prducto-Trendy p {
+  margin-left: 10px;
+  margin-right: 1.50px;
+  font-size: 17px;
+  color: rgb(112, 111, 111);
+  padding-top: 20px;
+  font-family: "Monserrat";
+}
+
+@media (max-width: 992px) {
+  .product-showcase {
+    grid-template-columns: 1fr;
+    
+  }
+
+  .showcase-right {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .showcase-left .big-card img {
+    height: 350px;
+  }
+
+  .small-card img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .showcase-right {
+    grid-template-columns: 1fr;
+  }
+}

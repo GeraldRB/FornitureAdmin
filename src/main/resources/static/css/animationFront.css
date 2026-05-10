@@ -1,0 +1,26 @@
+.zoom-start-big-wrap {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.zoom-start-big {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
+}
+
+.zoom-start-big.active {
+  animation: mpgZoomStart 2.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes mpgZoomStart {
+  from {
+    transform: scale(2.15);
+  }
+  to {
+    transform: scale(1);
+  }
+}

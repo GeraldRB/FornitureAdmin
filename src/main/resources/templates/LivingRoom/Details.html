@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPG | Sillones</title>
+  <link rel="icon" type="image/svg+xml" href="Assets/SVG/SVGMPG.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../Assets/Css/Details.css" />
+  <link rel="stylesheet" href="../../Assets/Css/LivingRoomInedex.css" />
+
+  <meta property="og:title" content="MPG | Sillones">
+  <meta property="og:description" content="Sofá moderno de sala con diseño elegante y confortable.">
+
+  <!-- When I finish the domain -->
+  <meta property="og:image" content="https://tusitio.com/Media/Forniture/hamburgo.png">
+  <meta property="og:url" content="https://tusitio.com/producto/hamburgo">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVLKM58VVP">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZVLKM58VVP');
+</script>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="../../index.html" class="logo" style="text-decoration: none;">MPG</a>
+
+    <nav class="nav-links">
+      <!-- <a href="#">Todos</a> -->
+      <a href="../../views/LivingRoom/index.html">Sala</a>
+      <a href="../../views/Butacas/index.html">Butacas</a>
+      <a href="../../views/BeedRoom/index.html">Dormitorios</a>
+      <a href="../../views/DiningRoom/index.html">Comedores</a>
+      <a href="../../views/Closets/index.html">Armarios</a>
+    </nav>
+
+  </header>
+
+  <section class="product-detail-page">
+    <div class="product-detail-container">
+
+      <!-- GALERÍA -->
+      <div class="product-detail-gallery">
+        <div class="product-main-image">
+          <!-- <span class="product-badge">PIEZA DESTACADA</span> -->
+          <img src="../../Media/Forniture/chesterfield2.webp" id="mainImage" alt="Sillón de sala"
+            onclick="changeImage(this)">
+        </div>
+
+        <div class="product-thumb-grid">
+          <div class="product-thumb">
+            <img src="../../Media/Forniture/chesterfield.webp" onclick="changeImage(this)" alt="Vista lateral">
+          </div>
+
+          <div class="product-thumb">
+            <img src="../../Media/Forniture/chesterfield2.webp" onclick="changeImage(this)" alt="Detalle del sillón">
+          </div>
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <div class="product-detail-info">
+        <p class="product-breadcrumb">COLECCIÓN / SALA / SILLONES</p>
+
+        <h1 class="product-title">MPG | Sala</h1>
+
+        <p class="product-price">₡395.000</p>
+
+        <div class="product-block">
+          <h4>Descripción</h4>
+          <p>
+            Un sillón de sala con líneas elegantes, estructura firme y un acabado
+            pensado para aportar calidez, confort y presencia al espacio.
+          </p>
+        </div>
+
+        <div class="product-block">
+          <h4>Medidas</h4>
+          <div class="product-measures">
+            <div>
+              <span>Fondo</span>
+              <strong>90 cm</strong>
+            </div>
+            <div>
+              <span>Ancho</span>
+              <strong>2.05 m</strong>
+            </div>
+            <div>
+              <!-- <span>Fondo</span>
+              <strong>90 cm</strong> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="product-block">
+          <h4>Detalles</h4>
+          <ul class="product-details-list">
+            <li>Tapizado de alta calidad</li>
+            <li>Estructura de madera sólida</li>
+            <li>Ideal para sala o recibidor</li>
+          </ul>
+        </div>
+
+        <div class="product-block">
+          <h4>Tipo de Tela</h4>
+          <ul class="product-details-list">
+            <li>Tela principal: Lino gris</li>
+            <li>Disponible en: Lino, Microfibra, Super Cuero, Vinil</li>
+            <li>Textura suave y resistente al uso diario</li>
+          </ul>
+        </div>
+
+        <a href="#" class="product-whatsapp-btn">
+          Consultar por WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script type="module" src="../../Assets/JS/sendMessage.js"></script>
+</body>
+
+</html>

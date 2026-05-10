@@ -1,0 +1,115 @@
+.section-title {
+  margin-top: 70px;
+  width: min(700px, 60vw);
+  text-align: center;
+  font-family: "Monserrat";
+}
+
+.section-title h1 {
+  font-size: 3rem;
+  color: black;
+  -webkit-text-stroke: 1px black;
+}
+
+.section-description {
+  margin-top: 25px;
+  width: min(700px, 60vw);
+  text-align: center;
+  font-family: "Monserrat";
+}
+
+.section-description p {
+  font-size: 1.20rem;
+  color: var(--muted-description);
+}
+
+.span-color {
+  color: #DA4B2C;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
+  
+}
+
+.card {
+  margin-top: 80px;
+  border: none;
+  background-color: var(--grey);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+}
+
+.card img {
+  height: 40vh;
+  width: 100%;
+  display: block;
+  pointer-events: none;
+  
+}
+
+.card h2 {
+  margin-top: 15px;
+  text-align: center;
+  font-family: "Monserrat";
+  font-size: 1.30rem;
+  color: var(--black);
+  text-align: start;
+}
+
+.card p {
+  text-align: center;
+  font-family: "Monserrat";
+  font-size: 1.05rem;
+  color: var(--muted-card-p);
+  text-align: start;
+
+  width: 94%;
+  padding-left: 0px;
+  margin-right: auto;
+
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.card-img-anim-wrap {
+  overflow: hidden;
+}
+
+.card-img-anim {
+  transition: transform 0.6s ease;
+}
+
+.card:hover .card-img-anim {
+  transform: scale(1.08);
+}
+
+@media (min-width: 576px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

@@ -1,0 +1,92 @@
+/* NAVBAR */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 50;
+}
+
+.front-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* izquierda y derecha quedan normales */
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* CENTRO ABSOLUTO (no lo empuja el flex) */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+
+.logo-slot {
+  width: 220px;
+  height: 28px;
+  position: relative;
+  overflow: visible;
+}
+
+/* tu nav-right tal cual */
+.nav-right {
+  gap: 10px;
+  opacity: .9;
+  font-size: 14px;
+}
+
+.pill {
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(--muted);
+  background: rgba(--soft);
+  cursor: pointer;
+  user-select: none;
+}
+
+.no-select {
+  user-select: inherit;
+
+}
+
+
+/* tu logo final igual */
+.nav-logo-final {
+  display: inline-block;
+
+  transform: translateY(-110%);
+  opacity: 0;
+  transition: transform 700ms cubic-bezier(.22, 1, .36, 1), opacity 500ms ease;
+  will-change: transform, opacity;
+
+  font-family: "Monserrat";
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #fffcfc;
+  font-size: 20px;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.nav-logo-final.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
