@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MPG Mubles</title>
-    <link rel="icon" type="image/svg+xml" href="Assets/SVG/SVGMPG.svg">
+    <link rel="icon" type="image/svg+xml" th:href="@{/SVG/SVGMPG.svg}">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -19,10 +19,15 @@
 
                 <body>
 
-                    
+
                     <div xmlns:th="http://www.thymeleaf.org" th:fragment="sidebar">
+
+                        <button id="menuToggle" class="menu-toggle" type="button">
+                            <i class="bi bi-list"></i>
+                        </button>
+
                         <div class="body-index-comercio">
-                            <div class="frame">
+                            <div class="frame">                               
                                 <aside class="sidebar">
 
                                     <div class="brand">
@@ -38,28 +43,28 @@
                                     <div class="divider"></div>
 
                                     <nav class="menu">
-                                        <a th:href="@{/Images/create}">
+                                        <a th:href="@{/Home/}">
                                             <i class="bi bi-image"></i>
                                             <span>Inicio</span>
                                         </a>                                        
-                                        <a th:href="@{/Images/create}">
+                                        <a th:href="@{/managementProduct/list}">
                                             <i class="bi bi-image"></i>
                                             <span>Inventario</span>
                                         </a>                                        
-                                        <a th:href="@{/Images/create}">
+                                        <a th:href="@{/managementProduct/add}">
                                             <i class="bi bi-image"></i>
                                             <span>Subir Producto</span>
                                         </a>
 
-                                        <a th:href="@{/Images}">
+                                        <a th:href="@{/Product}">
                                             <i class="bi bi-card-list"></i>
                                             <span>Pedidos</span>
                                         </a>
-                                        <a th:href="@{/Images}">
+                                        <a th:href="@{/Product}">
                                             <i class="bi bi-card-list"></i>
                                             <span>Configuraciones</span>
                                         </a>
-                                        <a th:href="@{/Images}">
+                                        <a th:href="@{/Product}">
                                             <i class="bi bi-card-list"></i>
                                             <span>Ayuda</span>
                                         </a>                                        
@@ -76,5 +81,7 @@
                             </div>
                         </div>
                     </div>
+
+
                 </body>
                 </html>

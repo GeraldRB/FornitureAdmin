@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"      
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:fragment="head">
+        <title>TechShop</title>
+        <meta charset="UTF-8"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/js/rutinas.js}"></script>
+        
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>        
+        <link th:href="@{/css/estilos.css}" rel="stylesheet"/>
+        <meta name="_csrf" th:content="${_csrf.token}"/>
+        <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+    </head>
+    <body>
+
+
+        <section th:fragment="mostrarToast">
+            <div aria-live="polite" aria-atomic="true" 
+                 class="position-fixed top-50 start-50 translate-middle" style="z-index: 1080;">                
+                <div th:if="${error}" class="toast show"
+                     role="alert"
+                     aria-live="assertive"                     
+                     aria-atomic="true"
+                     data-bs-autohide="true">
+                    <div class="toast-header text-white bg-danger">
+                        <i class="fa-solid fa-bomb"></i> <strong clas=me-auto> [[#{error}]]</strong>
+                    </div>
+                    <div class="toast-body">
+                        <p th:text="${mensaje}"></p>
+                        <div class="mt-2 pt-2 border-top text-center">
+                            <button type="button" class="btn btn-secondary btn-sm" 
+                                    data-bs-dismiss="toast">Cerrar Ventana
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div th:if="${todoOk}" class="toast show"
+                     role="status"
+                     aria-live="polite"
+                     aria-atomic="true"
+                     data-bs-autohide="true">
+                    <div class="toast-header text-white bg-success">
+                        <i class="fa-solid fa-square-check"></i> <strong clas=me-auto> Exitoso</strong>
+                    </div>
+                    <div class="toast-body">
+                        <p th:text="${mensaje}"></p>
+                        <div class="mt-2 pt-2 border-top text-center">
+                            <button type="button" class="btn btn-secondary btn-sm" 
+                                    data-bs-dismiss="toast">[[#{accion.cerrar}]]</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>    
+
+        
+        <footer class="footer" id="footer">
+            <div class="footer-overlay">
+
+                <!-- línea roja arriba -->
+                <div class="footer-top-line"></div>
+
+                <div class="footer-container">
+
+                    <!-- LEFT -->
+                    <div class="footer-col">
+                        <h2 class="logo">MPG</h2>
+
+                        <p class="mt-2">Atención al cliente en línea:</p>
+                        <p>+506 8787-6656</p>
+                        <p>info@zestdeco.USA</p>
+
+                        <h3 class="customer-title">ATENCIÓN AL CLIENTE</h3>
+                        <p>Nuestro equipo está disponible:</p>
+                        <p>Lunes y viernes: 10:00 am a 5:30 pm</p>
+                        <p>Sábado y domingo: 11:00 am a 4:30 pm</p>
+                        <p>Días festivos: Abierto</p>
+                    </div>
+
+                    <!-- CENTER -->
+                    <div class="footer-col">
+                        <h3>NAVEGACIÓN</h3>
+                        <ul class="footer-links">
+                            <li><a th:href="@{/sala/}">Sala</a></li>
+                            <li><a th:href="@{/butacas/}">Butacas</a></li>
+                            <li><a th:href="@{/dormitorios/}">Dormitorios</a></li>
+                            <li><a th:href="@{/comedores/}">Comedor</a></li>
+                            
+                            <li><a th:href="@{/armarios/}">Armarios</a></li>
+                            
+                            <li><a href="@{/login}"
+                                   sec:authorize="isAnonymous() or hasRole('ADMIN')"
+                                   >Log In</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- RIGHT -->
+                    <div class="footer-col">
+                        <h3>BOLETÍN</h3>
+
+                        <p class="newsletter-text">
+                            Forma parte de MPG.<br><br>
+                            Recibe inspiración para tu hogar, ideas de diseño y novedades en muebles de madera.<br>
+                            Creamos espacios que se viven.
+                        </p>
+
+                        <div class="newsletter">
+                            <input type="email" placeholder="ENTER EMAIL..." />
+                            <button>ENVIAR</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>        
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,87 +1,229 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/springsecurity6">
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org">
 
     <head>
-        <meta charset="UTF-8"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-        <link rel="stylesheet" th:href="@{/css/citas.css}"/>
-        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
-        <title>[[#{login.inicioSession}]]</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Iniciar sesión | MPG</title>
+
+        <link rel="icon"
+              type="image/svg+xml"
+              th:href="@{/SVG/SVGMPG.svg}">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+              rel="stylesheet">
+
+        <link rel="stylesheet"
+              th:href="@{/css/login.css}">
     </head>
 
-    <body class="bg">
-        <!-- Navbar -->
-        <th:block th:replace="~{general/fragmentos :: navbar}"></th:block>
+    <body>
 
-        <main class="shadow p-2 mt-0 ">
-            <div class="container py-4 d-flex flex-column align-items-center">
-                <h1 class="fw-bold color-azul"></h1>
-                <p class="lead titulo-terciario"></p>
-            </div>
+        <main class="login-page">
 
-            <!-- Tarjeta de Login -->
-            <div class="card p-4 shadow-lg mb-4 mx-auto mt-3" style="max-width: 420px; border-radius: 20px;">
-                <div class="text-center mb-3">
-                    <img th:src="@{/img/Logo2.png}" alt="logo2" class="logo-card">
+            <section class="login-image">
+
+                <div class="login-image-overlay"></div>
+
+                <div class="login-brand">
+
+                    <img th:src="@{/SVG/SVGMPG.svg}"
+                         src="/SVG/SVGMPG.svg"
+                         alt="Logo de MPG Muebles Palmares Gera"
+                         class="brand-logo">
+
+                    <div>
+                        <h1>MPG</h1>
+                        <p>Muebles Palmares Gera</p>
+                    </div>
+
                 </div>
 
-                <h4 class="text-center color-azul fw-semibold mb-4">[[#{login.inicioSession}]]</h4>
+                <div class="login-image-content">
+                    <span>Administración MPG</span>
 
-                <form method="POST" th:action="@{/login}">
-                    
-                    <!-- Usuario -->
-                    <div class="mb-4">
-                        <label for="username" class="form-label fw-semibold color-azul">[[#{login.CorreoElectronico}]]</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="bi bi-person color-azul"></i></span>
-                            <input class="form-control" id="username" name="username" type="text" 
-                                   th:placeholder="#{login.username}" required>
+                    <h2>
+                        Diseño, calidad y comodidad para cada espacio.
+                    </h2>
+
+                    <p>
+                        Accede al sistema administrativo para gestionar productos,
+                        imágenes y contenido de la tienda.
+                    </p>
+                </div>
+
+            </section>
+
+            <section class="login-form-section">
+
+                <div class="login-container">
+
+                    <a th:href="@{/Home/}"
+                       class="back-home">
+                        ← Volver al inicio
+                    </a>
+
+                    <div class="login-heading">
+                        <span class="small-title">Bienvenido</span>
+
+                        <h2>Iniciar sesión</h2>
+
+                        <p>
+                            Ingresa tus datos para acceder al panel administrativo.
+                        </p>
+                    </div>
+
+                    <div th:if="${param.error}"
+                         class="alert alert-error">
+                        Correo o contraseña incorrectos.
+                    </div>
+
+                    <div th:if="${param.logout}"
+                         class="alert alert-success">
+                        Sesión cerrada correctamente.
+                    </div>
+
+                    <form th:action="@{/login}"
+                          method="POST"
+                          class="login-form">
+
+                        <div class="form-group">
+
+                            <label for="username">
+                                Correo electrónico
+                            </label>
+
+                            <div class="input-container">
+
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="20"
+                                     height="20"
+                                     viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor"
+                                     stroke-width="1.8"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round">
+
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+
+                                <polyline points="22,6 12,13 2,6"></polyline>
+
+                                </svg>
+
+                                <input type="email"
+                                       id="username"
+                                       name="username"
+                                       placeholder="correo@ejemplo.com"
+                                       autocomplete="email"
+                                       required>
+
+                            </div>
+
                         </div>
-                    </div>
 
-                    <!-- Contraseña -->
-                    <div class="mb-4">
-                        <label for="password" class="form-label fw-semibold color-azul">[[#{login.Contrasenna}]]</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="bi bi-lock color-azul"></i></span>
-                            <input class="form-control" id="password" name="password" type="password" 
-                                   th:placeholder="#{login.password}" required>
+                        <div class="form-group">
+
+                            <label for="password">
+                                Contraseña
+                            </label>
+
+                            <div class="input-container">
+
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="20"
+                                     height="20"
+                                     viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor"
+                                     stroke-width="1.8"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round">
+
+                                <rect x="3"
+                                      y="11"
+                                      width="18"
+                                      height="10"
+                                      rx="2"
+                                      ry="2"></rect>
+
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+
+                                </svg>
+
+                                <input type="password"
+                                       id="password"
+                                       name="password"
+                                       placeholder="Ingresa tu contraseña"
+                                       autocomplete="current-password"
+                                       required>
+
+                                <button type="button"
+                                        class="show-password"
+                                        id="showPassword"
+                                        aria-label="Mostrar contraseña">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         width="20"
+                                         height="20"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="1.8"
+                                         stroke-linecap="round"
+                                         stroke-linejoin="round">
+
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+
+                                    <circle cx="12"
+                                            cy="12"
+                                            r="3"></circle>
+
+                                    </svg>
+
+                                </button>
+
+                            </div>
+
                         </div>
-                    </div>
 
-                    <!-- Botón principal -->
-                    <button class="btn btn-success w-100 py-2 fw-semibold mb-4" type="submit">
-                        <i class="fas fa-sign-in-alt"></i> [[#{login.inicioSession}]]
-                    </button>
+                        <button type="submit"
+                                class="login-button">
+                            Ingresar al sistema
+                        </button>
 
-                    <!-- Links secundarios -->
-                    <div class="text-center mb-3">
-                        <a href="#" class="text-decoration-none color-azul d-block mb-3">
-                            [[#{login.OlvidoContrasenna}]]
-                        </a>
-                        <a href="#" class="text-decoration-none color-azul fw-semibold ">
-                            [[#{login.Formulario}]]
-                        </a>
-                    </div>
+                    </form>
 
-                </form>
-            </div>
+                    <p class="login-footer">
+                        © 2026 MPG Muebles Palmares Gera
+                    </p>
+
+                </div>
+
+            </section>
+
         </main>
 
-        <!-- Footer -->
-        <footer th:replace="~{general/fragmentos :: footer}"></footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
-            AOS.init({
-                duration: 800, 
-                once: true    
+            const showPasswordButton = document.getElementById("showPassword");
+            const passwordInput = document.getElementById("password");
+
+            showPasswordButton.addEventListener("click", function () {
+                const isPassword = passwordInput.type === "password";
+
+                passwordInput.type = isPassword ? "text" : "password";
+
+                showPasswordButton.setAttribute(
+                        "aria-label",
+                        isPassword ? "Ocultar contraseña" : "Mostrar contraseña"
+                        );
             });
         </script>
 
     </body>
-
 </html>
