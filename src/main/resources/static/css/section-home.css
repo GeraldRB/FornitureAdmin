@@ -29,7 +29,7 @@
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(1fr);
+  grid-template-columns;
   gap: 15px;
   width: 100%;
   padding: 20px;
@@ -37,7 +37,7 @@
 }
 
 .card {
-  margin-top: 80px;
+  margin-top: 50px;
   border: none;
   background-color: var(--grey);
   width: 100%;

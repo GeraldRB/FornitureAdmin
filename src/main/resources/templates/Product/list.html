@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/springsecurity6">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MPG Mubles</title>
+        <link rel="icon" type="image/svg+xml" th:href="@{/SVG/SVGMPG.svg}">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+                  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+                    <link rel="stylesheet" th:href="@{/css/sidebar.css}" />
+                    <link rel="stylesheet" th:href="@{/css/imagesCreate.css}" />
+                    <link rel="stylesheet" th:href="@{/css/footer.css}">
+                        <link rel="stylesheet" th:href="@{/css/tableList.css}">    
+
+                            </head>
+
+                            <style>
+
+                                .pagination{
+                                    display: flex;
+                                    justify-content: center;
+                                    padding-bottom: 50px;
+                                }
+                                .pagination a {
+                                    color: black;
+                                    float: left;
+                                    padding: 8px 16px;
+                                    text-decoration: none;
+                                    transition: background-color .3s;
+
+                                }
+
+                                .pagination a.active {
+                                    background-color: dodgerblue;
+                                    color: white;
+                                }
+
+                                .pagination a:hover:not(.active) {
+                                    background-color: #ddd;
+                                }
+                            </style>
+                            <body style="background-color: whitesmoke">
+
+                                <div class="Container">
+                                    <th:block th:replace="~{Product/sidebar :: sidebar}"></th:block>
+                                    <main>
+
+
+                                        <!-- Create TXT -->
+                                        <div class="products-txt text-start text-uppercase">
+                                            <p> Inventario / <span>ADMIN</span> </p>
+                                        </div>
+
+
+                                        <!-- PRODUCTS -->
+                                        <section class="living-room-products container">
+                                            <div class="">
+
+                                                <div class="d-flex">
+                                                    <a th:href="@{/managementProduct/add}" class="button-NewProducto ms-auto">
+                                                        <i class="bi bi-plus-lg me-2"></i>
+                                                        NUEVO PRODUCTO
+                                                    </a>
+                                                </div>
+
+                                                <table class="content-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" style="color: #f3f3f3;">PRODUCTO</th>
+                                                            <th scope="col" style="color: #f3f3f3;">CATEGORÍA</th>
+                                                            <th scope="col" style="color: #f3f3f3;">PRECIO</th>
+                                                            <th scope="col" style="color: #f3f3f3;">SKUL</th>
+                                                            <th scope="col" style="color: #f3f3f3;">ESTADO</th>
+                                                            <th scope="col" style="color: #f3f3f3;">ACCIONES</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr th:each="producto : ${Productos}">
+                                                            <th scope="row" 
+                                                                th:text="${producto.productoNombre}">
+                                                            </th>
+
+                                                            <td style="color: rgb(140, 140, 140); font-weight: bold" 
+                                                                th:text="${producto.getNonbreCategoria}">
+                                                            </td>
+                                                            <td style="font-weight: bold" 
+                                                                th:text="${'₡' + #numbers.formatDecimal(producto.precioVenta, 1, 'POINT', 0, 'COMMA')}">
+                                                            </td>
+                                                            <td style="color: rgb(140, 140, 140); font-weight: bold " 
+                                                                th:text="${producto.skuReferencia}">
+                                                            </td>
+                                                            <td>
+                                                                <span
+                                                                    th:text="${producto.estado == 1} ? 'Disponible' : 'Deshabilitado'"
+                                                                    th:class="${producto.estado == 1} ? 'status-activo' : 'status-inactivo'">
+                                                                </span>
+                                                            </td>
+
+                                                            <td>
+                                                                <div class="td-buttons">
+                                                                    <a <a th:href="@{/managementProduct/modify/{id}(id=${producto.productoID})}"><i class="bi bi-pencil-fill"></i></a>
+
+
+                                                                        <form th:action="@{/managementProduct/delete/{id}(id=${producto.productoID})}" method="post">
+                                                                            <button type="submit" class="btn btn-link p-0 border-0">
+                                                                                <i class="bi bi-trash-fill"></i>
+                                                                            </button>
+                                                                        </form>
+                                                                </div>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <!-- 
+                                                        <tr>
+                                                            <th scope="row">Mesa de Roble Imperial</th>
+
+                                                            <td>Mesa de comedor</td>
+                                                            <td>$450.000</td>
+                                                            <td>MPG-000-030</td>
+                                                            <td>
+                                                                <span class="status-inactivo">Inactivo</span>
+                                                            </td>
+
+                                                            <td>
+                                                                <div class="td-buttons">
+                                                                    <a href=""><i class="bi bi-pencil-fill"></i></a>
+                                                                    <a href=""><i class="bi bi-trash-fill"></i></a>
+                                                                </div>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        -->
+                                                    </tbody>
+                                                </table>
+
+
+
+                                                <div class="pagination" th:if="${totalPaginas > 1}">
+
+                                                    <a th:if="${pageActual > 0}"
+                                                       th:href="@{/managementProduct/list(page=${pageActual - 1})}">
+                                                        &laquo;
+                                                    </a>
+
+                                                    <a th:each="i : ${#numbers.sequence(0, totalPaginas - 1)}"
+                                                       th:href="@{/managementProduct/list(page=${i})}"
+                                                       th:text="${i + 1}"
+                                                       th:classappend="${i == pageActual} ? 'active' : ''">
+                                                    </a>
+
+                                                    <a th:if="${pageActual < totalPaginas - 1}"
+                                                       th:href="@{/managementProduct/list(page=${pageActual + 1})}">
+                                                        &raquo;
+                                                    </a>
+
+                                                </div>
+
+
+                                            </div>
+                                        </section>
+
+
+
+
+
+
+                                        <script th:src="@{/js/sidebar.js}"></script>
+
+                                        <script>
+                                            function formatearPrecio(input) {
+                                                let valor = input.value.replace(/\D/g, "");
+
+                                                input.value = valor.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                                            }
+
+                                            document.querySelector("form").addEventListener("submit", function () {
+                                                const precio = document.getElementById("forniturePrice");
+
+                                                precio.value = precio.value.replace(/\./g, "");
+                                            });
+                                        </script>
+                                        </body>
+                                        </html>

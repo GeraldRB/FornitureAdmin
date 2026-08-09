@@ -1,136 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MPG | Camas</title>
-  <link rel="icon" type="image/svg+xml" href="Assets/SVG/SVGMPG.svg">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MPG | Sillones</title>
+        <link rel="icon" type="image/svg+xml" th:href="@{/SVG/SVGMPG.svg}">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="../../Assets/Css/Details.css" />
-  <link rel="stylesheet" href="../../Assets/Css/LivingRoomInedex.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/css/Details.css}" />
+        <link rel="stylesheet" th:href="@{/css/LivingRoomInedex.css}" />
 
-  <meta property="og:title" content="MPG | Camas">
-  <meta property="og:description" content="Sofá moderno de sala con diseño elegante y confortable.">
+        <meta property="og:title" content="MPG | Sillones">
+        <meta property="og:description" content="Sofá moderno de sala con diseño elegante y confortable.">
 
-  <!-- When I finish the domain -->
-  <meta property="og:image" content="https://tusitio.com/Media/Forniture/hamburgo.jpg">
-  <meta property="og:url" content="https://tusitio.com/producto/hamburgo">
-</head>
-
-<body>
-
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <a href="../../index.html" class="logo" style="text-decoration: none;">MPG</a>
-
-    <nav class="nav-links">
-      <!-- <a href="#">Todos</a> -->
-      <a href="../../views/LivingRoom/index.html">Sala</a>
-      <a href="../../views/Butacas/index.html">Butacas</a>
-      <a href="../../views/BeedRoom/index.html">Dormitorios</a>
-      <a href="../../views/DiningRoom/index.html">Comedores</a>
-      <a href="../../views/Closets/index.html">Armarios</a>
-    </nav>
+        <!-- When I finish the domain -->
+        <meta property="og:image" content="https://tusitio.com/Media/Forniture/hamburgo.png">
+        <meta property="og:url" content="https://tusitio.com/producto/hamburgo">
+    </head>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVLKM58VVP">
     </script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-      gtag('config', 'G-ZVLKM58VVP');
+        gtag('config', 'G-ZVLKM58VVP');
     </script>
-  </header>
 
-  <section class="product-detail-page">
-    <div class="product-detail-container">
+    <body>
 
-      <!-- GALERÍA -->
-      <div class="product-detail-gallery">
-        <div class="product-main-image">
-          <!-- <span class="product-badge">PIEZA DESTACADA</span> -->
-          <img src="../../Media/Beds/card1.jpg" id="mainImage" alt="Sillón de sala" onclick="changeImage(this)">
-        </div>
+        <!-- NAVBAR -->
+        <header class="navbar">
+            <a th:href="@{/Home/}" class="logo" style="text-decoration: none;">MPG</a>
 
-        <div class="product-thumb-grid">
-          <div class="product-thumb">
-            <img src="../../Media/Beds/card1.1.jpg" onclick="changeImage(this)" alt="Vista lateral">
-          </div>
+            <nav class="nav-links">
+                <!-- <a href="#">Todos</a> -->
+                <a th:href="@{/sala/}">Sala</a>
+                <a th:href="@{/butacas/}">Butacas</a>
+                <a th:href="@{/dormitorios/}">Dormitorios</a>
+                <a th:href="@{/comedores/}">Comedores</a>
+                <a th:href="@{/armarios/}">Armarios</a>
+            </nav>
 
-          <div class="product-thumb">
-            <img src="../../Media/Beds/card1.jpg" onclick="changeImage(this)" alt="Detalle del sillón">
-          </div>
-        </div>
-      </div>
+        </header>
 
-      <!-- INFO -->
-      <div class="product-detail-info">
-        <p class="product-breadcrumb">COLECCIÓN / SALA / CAMAS</p>
+        <section class="product-detail-page">
 
-        <h1 class="product-title">Cama Nordirc Dream</h1>
 
-        <p class="product-price">₡350.000</p>
 
-        <div class="product-block">
-          <h4>Descripción</h4>
-          <p>
-            Un sillón de diseño elegante y contemporáneo, construido con una estructura firme y acabados de alta
-            calidad,
-            pensado para aportar confort, calidez y un toque distintivo a tu sala.
-          </p>
-        </div>
+            <div class="product-detail-container" >
 
-        <div class="product-block">
-          <h4>Medidas</h4>
-          <div class="product-measures">
-            <div>
-              <span>Disponible en:</span>
-              <strong>Matrimonial</strong>
+                <!-- GALERÍA -->
+                <div class="product-detail-gallery">
+                    <div class="product-main-image">
+                        <!-- <span class="product-badge">PIEZA DESTACADA</span> -->
+                        <img th:src="*{producto.urlPortada}" id="mainImage" alt="Sillón de sala"
+                             onclick="changeImage(this)">
+                    </div>
+
+                    <div class="product-thumb-grid">
+                        <div class="product-thumb">
+                            <img th:src="*{producto.getRestImages}" onclick="changeImage(this)" alt="Vista lateral">
+                        </div>
+
+                        <div class="product-thumb">
+                            <img th:src="*{producto.urlPortada}" onclick="changeImage(this)" alt="Detalle del sillón">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INFO -->
+
+                <form th:action="@{/muebles/sala}"
+                      th:object="${producto}" method="post"
+                      class="was-validated">
+
+                    <input type="hidden" th:field="*{productoID}">
+
+                    <div class="product-detail-info">
+                        <p class="product-breadcrumb">COLECCIÓN / SALA / SILLONES</p>
+
+                        <h1 class="product-title" th:text="*{productoNombre}">MPG | Sala</h1>
+
+                        <p class="product-price" th:text="${'₡' + #numbers.formatDecimal(producto.precioVenta, 1, 'POINT', 0, 'COMMA')}">₡395.000</p>
+
+                        <div class="product-block">
+                            <h4>Descripción</h4>
+                            <p th:text="*{descripcion}">
+                                Un sillón de sala con líneas elegantes, estructura firme y un acabado
+                                pensado para aportar calidez, confort y presencia al espacio.
+                            </p>
+                        </div>
+
+                        <div class="product-block">
+                            <h4>Medidas</h4>
+                            <div class="product-measures">
+                                <div>
+                                    <span>Disponible en:</span>
+                                    <strong>Matrimonial</strong>
+                                </div>
+                                <div>
+                                    <span>Disponible en:</span>
+                                    <strong>Individual </strong>
+                                </div>
+                                <div>
+                                    <!-- <span>Fondo</span>
+                                    <strong>90 cm</strong> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-block">
+                            <h4>Detalles</h4>
+                            <ul class="product-details-list">
+                                <li th:text="*{detallesAcabado}">Tapizado de alta calidad</li>
+                                <li>Cabecera y piecera tapizadas de alta calidad</li>
+                                <li>Estructura de madera sólida</li>
+                                <li>Ideal para dormitorios elegantes y acogedores</li>
+                            </ul>
+                        </div>
+
+                        <div class="product-block">
+                            <h4>Tipo de Tela</h4>
+                            <ul class="product-details-list">
+                                <li th:field="*{materialPrincipal}">Tela principal: Lino gris</li>
+                                <li>Disponible en: Lino, Microfibra, Super Cuero, Vinil</li>
+                                <li>Textura suave y resistente al uso diario</li>
+                            </ul>
+                        </div>
+                </form>
+
+                <a href="#" class="product-whatsapp-btn">
+                    Consultar por WhatsApp
+                </a>
             </div>
-            <div>
-              <span>Disponible en:</span>
-              <strong>Individual </strong>
-            </div>
-            <div>
-              <!-- <span>Fondo</span>
-              <strong>90 cm</strong> -->
-            </div>
-          </div>
+
         </div>
+    </section>
 
-        <div class="product-block">
-          <h4>Detalles</h4>
-          <ul class="product-details-list">
-            <li>Cabecera y piecera tapizadas de alta calidad</li>
-            <li>Estructura de madera sólida</li>
-            <li>Ideal para dormitorios elegantes y acogedores</li>
-          </ul>
-        </div>
-
-        <div class="product-block">
-          <h4>Material</h4>
-          <ul class="product-details-list">
-            <li>Tela principal: Lino gris</li>
-            <li>Disponible en: Lino, Microfibra, Super Cuero, Vinil</li>
-            <li>Textura suave y resistente al uso diario</li>
-          </ul>
-        </div>
-
-        <a href="#" class="product-whatsapp-btn">
-          Consultar por WhatsApp
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <script type="module" src="../../Assets/JS/sendMessage.js"></script>
+    <script type="module" th:src="@{/js/sendMessage.js}"></script>
 </body>
 
 </html>
