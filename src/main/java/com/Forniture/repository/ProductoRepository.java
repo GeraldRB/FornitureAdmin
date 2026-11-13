@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Integer>{
   
-    public List<Producto> findByEstadoTrue();
+    List<Producto> findByEstado(Byte estado);
     
     List<Producto> findByCategoriaAndEstado(Integer categoria, Byte estado);
     

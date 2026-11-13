@@ -49,7 +49,7 @@ input {
     overflow: hidden;
 
     background:
-        url("../Media/Forniture/Footer.webp")
+        url("/img/Forniture/Footer.webp")
         center / cover no-repeat;
 }
 

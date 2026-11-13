@@ -128,7 +128,7 @@ public class Producto implements Serializable {
     public String getNombreEstado(){
         switch(estado){
             case 1: return "Activo";
-            case 2: return "Inactivo";
+            case 0: return "Inactivo";
             default: return "Sin estado";
         }
     }
