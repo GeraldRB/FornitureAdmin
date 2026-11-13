@@ -47,7 +47,9 @@ public class ProductoController {
     @GetMapping("/add")
     public String addProduct(Model model) {
         var productos = productoService.getProductos(false);
-        model.addAttribute("producto", new Producto());
+        Producto producto = new Producto();
+        producto.setSkuReferencia(productoService.generarSiguienteSku());
+        model.addAttribute("producto", producto);
 
         //Product ProductoImagen
         return "Product/create";

@@ -148,9 +148,9 @@
                                                                         <div class="col">
                                                                             <div class="SKUL">
                                                                                 <label class="form-label muted-txt-form">SKUL / Referencia</label>
-                                                                                <input class="form-control muted" type="text" id="fornitureSkul" maxlength="20" placeholder="MPG-000-00" th:field="*{skuReferencia}" required
-                                                                                       oninvalid="this.setCustomValidity('Ingrese una Referencia.')"
-                                                                                       oninput="this.setCustomValidity('')">
+                                                                                <input class="form-control muted" type="text" id="fornitureSkul" maxlength="20" th:field="*{skuReferencia}" readonly
+                                                                                       title="El SKU no se puede modificar"
+                                                                                       style="background-color: #e9ecef; cursor: not-allowed;">
                                                                             </div>
                                                                         </div>
                                                                     </div>

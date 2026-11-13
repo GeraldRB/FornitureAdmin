@@ -62,10 +62,30 @@ public class ProductoService {
 
     }
 
+    private static final String SKU_PREFIJO = "MPG-000-";
+
+    // Calcula el siguiente SKU: toma el número más alto después de "MPG-000-" y le suma 1
+    @Transactional(readOnly = true)
+    public String generarSiguienteSku() {
+        int maximo = 0;
+        for (String sku : productoRepository.findSkusByPrefijo(SKU_PREFIJO)) {
+            try {
+                int numero = Integer.parseInt(sku.substring(SKU_PREFIJO.length()));
+                maximo = Math.max(maximo, numero);
+            } catch (NumberFormatException e) {
+                // Ignora SKUs que no terminan en un número
+            }
+        }
+        return SKU_PREFIJO + String.format("%02d", maximo + 1);
+    }
+
     //Method Save Product
     public Producto save(Producto producto) {
 
         if (producto.getProductoID() == null) {
+
+            // El SKU siempre lo asigna el sistema, no el formulario
+            producto.setSkuReferencia(generarSiguienteSku());
 
             if (productoRepository
                     .findBySkuReferencia(producto.getSkuReferencia())
@@ -103,18 +123,10 @@ public class ProductoService {
         Producto productoDB = productoRepository.findById(producto.getProductoID())
                 .orElseThrow(() -> new RuntimeException("El producto no existe."));
 
-        // Validar que el SKU no pertenezca a otro producto
-        productoRepository.findBySkuReferencia(producto.getSkuReferencia())
-                .ifPresent(p -> {
-                    if (!p.getProductoID().equals(producto.getProductoID())) {
-                        throw new RuntimeException("El SKU ya existe.");
-                    }
-                });
-
+        // El SKU no se modifica al editar: se conserva el que ya tiene en la base
         productoDB.setCategoria(producto.getCategoria());
         productoDB.setProductoNombre(producto.getProductoNombre());
         productoDB.setPrecioVenta(producto.getPrecioVenta());
-        productoDB.setSkuReferencia(producto.getSkuReferencia());
         productoDB.setDescripcion(producto.getDescripcion());
         productoDB.setAncho(producto.getAncho());
         productoDB.setAlto(producto.getAlto());
