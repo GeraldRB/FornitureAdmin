@@ -32,8 +32,8 @@ public class ProductoImagen {
     @Column(name = "nombreArchivo")
     private String nombreArchivo;
 
-    @Column(name = "portada")
-    private Boolean portada;
+    @Column(name = "portada", nullable = false)
+    private Boolean portada = false;
 
     @Column(name = "fechaCreacion")
     private LocalDateTime fechaCreacion = LocalDateTime.now();

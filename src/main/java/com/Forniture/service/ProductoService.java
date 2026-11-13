@@ -37,7 +37,7 @@ public class ProductoService {
     @Transactional(readOnly = true)
     public List<Producto> getProductos(boolean activos) {
         return activos
-                ? productoRepository.findByEstadoTrue()
+                ? productoRepository.findByEstado((byte) 1)
                 : productoRepository.findAll();
     }
 

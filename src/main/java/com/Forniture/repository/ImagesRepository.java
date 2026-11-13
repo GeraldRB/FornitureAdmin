@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ImagesRepository extends JpaRepository<ProductoImagen, Integer>{
     
-    ProductoImagen findByProductoProductoIDAndPortada(Long productoID, Boolean portda);
+    ProductoImagen findByProductoProductoIDAndPortada(Integer productoID, Boolean portada);
     
 }

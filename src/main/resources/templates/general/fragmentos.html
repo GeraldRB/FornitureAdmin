@@ -93,7 +93,7 @@
                             
                             <li><a th:href="@{/armarios/}">Armarios</a></li>
                             
-                            <li><a href="@{/login}"
+                            <li><a th:href="@{/login}"
                                    sec:authorize="isAnonymous() or hasRole('ADMIN')"
                                    >Log In</a></li>
                         </ul>
